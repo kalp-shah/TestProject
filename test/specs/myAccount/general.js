@@ -4,6 +4,16 @@ const path = require('path');
 
 describe('My Account Module', () => 
 {
+  before('Execute Before All Tests', () => {
+    browser.url('/');
+    browser.pause(5000);
+    let winsize1 =browser.setWindowSize(1024, 768);
+    
+    console.log(winsize1);
+    browser.pause(5000);
+    console.log('Execute Before All Tests');
+});
+
     it ('C144 - Verify General Settings page is available under My Account', () => {
         browser.pause(4000);
         $('[class="thumb-sm avatar avatar-8"]').click();

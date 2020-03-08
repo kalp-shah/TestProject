@@ -5,6 +5,15 @@ let toggle = require('../basic')
 describe('Notification Preference Module', () => 
 {
 
+  before('Execute Before All Tests', () => {
+    browser.url('/');
+    browser.pause(5000);
+    let winsize1 =browser.setWindowSize(1024, 768);
+    
+    console.log(winsize1);
+    browser.pause(5000);
+    console.log('Execute Before All Tests');
+});
     it ('User wants to reach notification Preference Page', () => {
     browser.pause(2000);
     $('[class="thumb-sm avatar avatar-8"]').click();

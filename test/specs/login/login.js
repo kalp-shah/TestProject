@@ -10,11 +10,16 @@ let userLogin = require('../basic')
    
 describe('Login Module', function() 
 {
-  browser.url('/');
-  browser.pause(5000);
-  let winsize1 =browser.setWindowSize(1024, 768);
-  console.log(winsize1);
-  browser.pause(5000);
+  before('Execute Before All Tests', () => {
+    browser.url('/');
+    browser.pause(5000);
+    let winsize1 =browser.setWindowSize(1024, 768);
+    
+    console.log(winsize1);
+    browser.pause(5000);
+    console.log('Execute Before All Tests');
+});
+
    it ('should not allow me to login with blank input', () =>{
     //allureReporter.addFeature('Feature1')
        userLogin.Login('', '');

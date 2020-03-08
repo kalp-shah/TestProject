@@ -4,7 +4,16 @@ const L = require("list");
 
 describe('Change Password Module', () => 
 {
-   
+   before('Execute Before All Tests', () => {
+      browser.url('/');
+      browser.pause(5000);
+      let winsize1 =browser.setWindowSize(1024, 768);
+      
+      console.log(winsize1);
+      browser.pause(5000);
+      console.log('Execute Before All Tests');
+  });
+  
 it ('C4874-Verify Change Password page is available under My Account', () => {
  browser.url('https://kalp.salesmate.io/#/app/user/changePassword');
         browser.pause(2000);

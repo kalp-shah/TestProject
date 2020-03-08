@@ -20,6 +20,15 @@ let userLogin = require('../basic')
 
 describe('Interface Preference Module', () => 
 {
+    before('Execute Before All Tests', () => {
+        browser.url('/');
+        browser.pause(5000);
+        let winsize1 =browser.setWindowSize(1024, 768);
+        
+        console.log(winsize1);
+        browser.pause(5000);
+        console.log('Execute Before All Tests');
+    });
     it('C4940- Verify Interface Preferences page is displayed under My Account',()=>{
         browser.url('https://kalp.salesmate.io/#/app/user/interfacePreferences');
         browser.pause(5000);
